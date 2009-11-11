@@ -1,0 +1,13 @@
+ShouldNotLog
+============
+
+Squelch logging for specified controller actions.
+
+
+Example
+=======
+
+class PostsController < ApplicationController
+  should_not_log :index
+end
+
