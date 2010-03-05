@@ -9,12 +9,9 @@ module ActionController
 
     def should_not_log(&block)
       logger.silence do
-        # this fucks up, no time to debug now. results in a line of benchmark spam for the action.
-        # perform_action_without_benchmark do
-        #  yield block
-        # end
-
-        yield block
+        perform_action_without_benchmark do
+          yield block
+        end
       end
     end
 
